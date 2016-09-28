@@ -4,7 +4,7 @@
 
 Nowadays internet economics are greatly related to ad clicks, large website traffic can bring more ad clicks, hence potential revenue increase. Aware of this fact, website admins are utilizing various tools to monitor real-time website visiting activity and dynamically adjust their content organization to cater their clients need. 
 
-In this project, we designed and implemented an application to supply comprehensive analytics of given website page based on user behaviours including: click time, stay time, Like-it-or-not. The organization of this app is based on Lambda Architectrure, which consisted of two layers:
+In this project, we designed and implemented an application to supply comprehensive analytics of given website page. We simulated user behaviors by continuously publishing messages to Kafka "user-behaviour" topic. The message describes which page user visited, how many clicks occured within that visit, how long the user stay in that page, and whether the user click to like button or not. Then messages are consumed by Spark to calculate the real-time webpage popularity and also persisted to Cassandra. The organization of this app is based on Lambda Architectrure, which consisted of two layers:
 
 ### Speed Layer
 
